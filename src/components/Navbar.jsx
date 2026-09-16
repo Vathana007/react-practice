@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
-  const cartCount = useSelector(state =>
-    state.cart.items.reduce((count, item) => count + item.quantity, 0)
+  const cartCount = useSelector((state) =>
+    state.cart.items.reduce((count, item) => count + item.quantity, 0),
   );
 
   return (
@@ -15,6 +15,7 @@ export default function Navbar() {
         </Link>
         <div className="nav-links">
           <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
           <Link to="/products">Plants</Link>
           <Link to="/cart" className="cart-link">
             🛒 Cart <span className="cart-count">{cartCount}</span>
